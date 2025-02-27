@@ -6,6 +6,8 @@ import { TxSimulation, TxSimulationMessage } from '@/components/tx/security/tend
 import TxCard from '@/components/tx-flow/common/TxCard'
 import { Alert, Box, Typography } from '@mui/material'
 import ExternalLink from '@/components/common/ExternalLink'
+import Track from '@/components/common/Track'
+import { MODALS_EVENTS } from '@/services/analytics'
 import type { SafeTransaction, MetaTransactionData } from '@safe-global/safe-core-sdk-types'
 
 import css from './styles.module.css'
@@ -30,8 +32,11 @@ const TxChecks = ({
       <Typography variant="h5">Transaction checks</Typography>
 
       <Alert severity="info">
-        We strongly advise verifying your transaction with a third-party tool like{' '}
-        <ExternalLink href={SAFE_UTILS_URL}>Safe Utils</ExternalLink> to ensure its authenticity.
+        We recommend analyzing your transaction with a third-party tool like{' '}
+        <Track {...MODALS_EVENTS.OPEN_SAFE_UTILS}>
+          <ExternalLink href={SAFE_UTILS_URL}>Safe Utils</ExternalLink>
+        </Track>
+        . Third-party terms & disclaimers may apply.
       </Alert>
 
       {(isTxSimulationFeatureEnabled || isRiskMitigationFeatureEnabled) && (
