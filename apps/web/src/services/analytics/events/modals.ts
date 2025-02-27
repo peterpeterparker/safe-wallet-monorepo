@@ -37,7 +37,7 @@ export const MODALS_EVENTS = {
     category: MODALS_CATEGORY,
   },
   OPEN_SAFE_UTILS: {
-    action: 'Open Safe Utils',
+    action: 'Open OpenZeppelin Safe Utils',
     category: MODALS_CATEGORY,
   },
   SIMULATE_TX: {
