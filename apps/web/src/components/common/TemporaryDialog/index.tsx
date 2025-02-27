@@ -21,20 +21,13 @@ export function TemporaryDialog(): ReactElement {
 
   return (
     <Dialog open={open}>
-      <DialogTitle>Security notice</DialogTitle>
+      <DialogTitle>Demo Purpose Only</DialogTitle>
       <DialogContent>
         <DialogContentText>
           <Typography color="text.primary">
-            Due to recent security incidents it is important to ALWAYS verify transactions that you are approving on
-            your signer wallet. If you can’t verify it, don’t sign it.
-          </Typography>
-
-          <Typography color="text.primary" mt={1}>
-            More information on how to verify a Safe transaction can be found in the{' '}
-            <ExternalLink href="https://help.safe.global/en/articles/276343-how-to-perform-basic-transactions-checks-on-safe-wallet">
-              corresponding help center article
-            </ExternalLink>
-            .
+            This app is a fork of <ExternalLink href="https://app.safe.global/">{`Safe{Wallet}`}</ExternalLink>,
+            deployed exclusively for demonstration purposes. Do not use it for real transactions or production
+            applications.
           </Typography>
         </DialogContentText>
       </DialogContent>
