@@ -10,7 +10,7 @@ import type { SafeTransaction, MetaTransactionData } from '@safe-global/safe-cor
 
 import css from './styles.module.css'
 
-const SAFE_TX_HASHES_UTIL_URL = 'https://www.safehashpreview.com/'
+const SAFE_UTILS_URL = 'https://safeutils.openzeppelin.com/'
 
 const TxChecks = ({
   executionOwner,
@@ -25,24 +25,24 @@ const TxChecks = ({
   const isRiskMitigationFeatureEnabled = useHasFeature(FEATURES.RISK_MITIGATION)
   const isTxSimulationFeatureEnabled = isTxSimulationEnabled(chain)
 
-  if (!isTxSimulationFeatureEnabled && !isRiskMitigationFeatureEnabled) {
-    return null
-  }
-
   return (
     <TxCard>
       <Typography variant="h5">Transaction checks</Typography>
 
       <Alert severity="info">
         We strongly advise verifying your transaction with a third-party tool like{' '}
-        <ExternalLink href={SAFE_TX_HASHES_UTIL_URL}>Safe Hash Preview</ExternalLink> to ensure its authenticity.
+        <ExternalLink href={SAFE_UTILS_URL}>Safe Utils</ExternalLink> to ensure its authenticity.
       </Alert>
 
-      <TxSimulation disabled={disabled} transactions={transaction} executionOwner={executionOwner} />
+      {(isTxSimulationFeatureEnabled || isRiskMitigationFeatureEnabled) && (
+        <>
+          <TxSimulation disabled={disabled} transactions={transaction} executionOwner={executionOwner} />
 
-      <Box className={css.mobileTxCheckMessages}>
-        <TxSimulationMessage />
-      </Box>
+          <Box className={css.mobileTxCheckMessages}>
+            <TxSimulationMessage />
+          </Box>
+        </>
+      )}
     </TxCard>
   )
 }
