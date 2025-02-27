@@ -5538,6 +5538,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@junobuild/config@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@junobuild/config@npm:0.1.2"
+  checksum: 10/186a79c67b49759cf03613725a97a6aec3a19045e032b12fc07619d539309af52366398e34260323e644eff29612c7ec9dd55498c338c4c727d1ffb17b4a9c65
+  languageName: node
+  linkType: hard
+
 "@lit-labs/react@npm:^1.0.2":
   version: 1.2.1
   resolution: "@lit-labs/react@npm:1.2.1"
@@ -7570,6 +7577,7 @@ __metadata:
     "@eslint/js": "npm:^9.18.0"
     "@faker-js/faker": "npm:^9.0.3"
     "@gnosis.pm/zodiac": "npm:^4.0.3"
+    "@junobuild/config": "npm:^0.1.2"
     "@mdx-js/loader": "npm:^3.0.1"
     "@mdx-js/react": "npm:^3.0.1"
     "@mui/icons-material": "npm:^6.1.6"
